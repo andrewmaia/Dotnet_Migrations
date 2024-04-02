@@ -7,6 +7,10 @@ namespace Dotnet_Migrations
 {
     public class Cliente
     {
-        
+        public int ClienteId { get; set; }
+
+        public string RazaoSocial { get; set; }
+        public string Cnpj { get; set; }
+
     }
 }
