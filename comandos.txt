@@ -1,0 +1,10 @@
+Criar Migração
+
+DOTNET: dotnet ef migrations add AdicaoNovoCampo
+PackageManager: Add-Migration AdicaoNovoCampo
+
+------------------------------------
+Aplicar Migração
+
+DOTNET: dotnet ef database update
+PackageManager: Update-Database
