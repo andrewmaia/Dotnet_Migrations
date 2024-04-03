@@ -8,3 +8,28 @@ Aplicar Migração
 
 DOTNET: dotnet ef database update
 PackageManager: Update-Database
+------------------------------------
+Downgrade de Migração:
+
+DOTNET: dotnet ef database update nomeMigracaoQueVcQuerRetornar
+PackageManager: Update-Database -Migration nomeMigracaoQueVcQuerRetornar
+
+------------------------------------
+Remover arquivos gerados Migração:
+
+DOTNET: dotnet ef migrations remove
+PackageManager: Remove-Migration
+
+------------------------------------
+Listar todas as migrações:
+
+DOTNET: dotnet ef migrations list
+PackageManager: Get-Migration
+------------------------------------
+Checar se existe alterações pendentes no modelo que precisam ser adicionadas a uma migração:
+
+DOTNET: dotnet ef migrations has-pending-model-changes
+
+
+
+
