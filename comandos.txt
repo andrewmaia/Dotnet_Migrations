@@ -1,21 +1,22 @@
 Criar Migração
 
-DOTNET: dotnet ef migrations add AdicaoNovoCampo
-PackageManager: Add-Migration AdicaoNovoCampo
+DOTNET: dotnet ef migrations add NomeMigracao
+PackageManager: Add-Migration NomeMigracao
 
 ------------------------------------
-Aplicar Migração
+Aplicar  Ultima Migração
 
 DOTNET: dotnet ef database update
 PackageManager: Update-Database
 ------------------------------------
-Downgrade de Migração:
+Aplicar  um Migração Especifica (Pode ser utilizada para downgrade de Migração tb)
 
-DOTNET: dotnet ef database update nomeMigracaoQueVcQuerRetornar
-PackageManager: Update-Database -Migration nomeMigracaoQueVcQuerRetornar
+DOTNET: dotnet ef database update NomeMigracao
+PackageManager: Update-Database NomeMigracao
+
 
 ------------------------------------
-Remover arquivos gerados Migração:
+Remover arquivos gerados ultima Migração:
 
 DOTNET: dotnet ef migrations remove
 PackageManager: Remove-Migration
@@ -29,6 +30,24 @@ PackageManager: Get-Migration
 Checar se existe alterações pendentes no modelo que precisam ser adicionadas a uma migração:
 
 DOTNET: dotnet ef migrations has-pending-model-changes
+------------------------------------
+Gerar Scripts SQL das migrações
+
+DOTNET: dotnet ef migrations script
+PackageManager: Script-Migration
+------------------------------------
+Gerar Scripts SQL em um intervalo de migrações
+
+DOTNET: dotnet ef migrations script nomeMigracaoInicial nomeMigracaoFinal
+PackageManager: Script-Migration nomeMigracaoInicial nomeMigracaoFinal
+
+------------------------------------
+Gerar Scripts SQL Idempotentes
+
+DOTNET: dotnet ef migrations script --idempotent
+PackageManager: Script-Migration -Idempotent
+
+
 
 
 
